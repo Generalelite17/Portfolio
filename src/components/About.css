@@ -1,20 +1,4 @@
-/* Global Styles */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: "Roboto", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-  }
-  
-    
-  /* Style for the main header in the About page */
+      /* Style for the main header in the About page */
   .about-content h1 {
     color: #333;
     font-size: 2.5em;
@@ -42,30 +26,72 @@ body {
   }
   .intro-text p {
     text-align: left;
-    font-size: 1.5em;
+    font-size: 1.3em;
     line-height: 1.6;
     color: #444;
+    padding-bottom: 20px;
   }
 
   .intro-img{
-    border-radius: 5%;
+    border-radius: 7%;
     margin-left: 15px;
     max-width: 50%;
     align-self: center;
+    margin-top: auto;        /* Pushes the image down until the top space is equal to bottom */
+    margin-bottom: auto;     /* Pushes the image up until the bottom space is equal to top */
   }
   
-  /* Professional journey section styling */
-  .professional {
-    width: 100%;
-    background-color: #fff;  /* White background */
-    padding: 15px;
-  }
   
-  .professional p {
-    font-size: 1em;
-    line-height: 1.5;
-    color: #555;
-  }
+ /* Professional Journey Section as a two-column layout */
+.professional-section {
+  display: flex;
+  align-items: flex-start; /* Aligns items at the top */
+  justify-content: space-between;
+  width: 100%;
+  background-color: #fff; /* White background */
+  padding: 15px;
+}
+
+
+.professional-img-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Optional: adds space between the images */
+  justify-content: center;
+}
+
+/* Styles for the image on the left */
+.professional-img {
+  border-radius: 7%;      /* Optional: adds slight rounding */
+  margin-right: 15px;     /* Space between the image and the text */      /* Adjust this value as needed */
+  height: auto;
+  width: 100%;
+  object-fit: cover; /* Applies only to the image */
+  padding-right: 20px;
+}
+
+/* Container for the text on the right */
+.professional-text {
+  flex: 1;
+  text-align: left;
+}
+
+/* Professional Journey heading */
+.professional-text h1 {
+  color: #333;
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Professional Journey paragraphs */
+.professional-text p {
+  font-size: 1.3em;
+  line-height: 1.5;
+  color: #555;
+  padding-bottom: 20px;
+}
 
   .header-section{
     width: 100%;
@@ -74,40 +100,50 @@ body {
 
   .header-section img {
     width: 100%;
-    height: 350px;
+    height: 375px;
     object-fit: cover;
     display: block;
   }
-
-
-/* Hobbie section styling using CSS Grid */
+  
+  /* Hobbie section styling */
 .hobbie-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;  /* Two equal columns */
-  gap: 15px;
-  background-color: rgb(74, 100, 119);  /* Dark blue background */
+  display: flex;
+  align-items: flex-start; /* aligns items at the top */
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgb(74, 100, 119); /* Dark blue background */
   padding: 15px;
 }
 
-/* Style for the text containers */
+/* Text container styling */
 .hobbie-text {
+  flex: 1;
+  margin-right: 15px;
+}
+
+/* Hobbie section heading and paragraph */
+.hobbie-text h1 {
   color: #fff;
-  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 10px; /* optional spacing */
+}
+
+.hobbie-text p {
+  color: #fff;
+  font-size: 1.3em;
   line-height: 1.5;
   text-align: left;
+  padding-bottom: 20px;
 }
 
 /* Image styling */
 .hobbie-img {
-  width: 50%;
-  border-radius: 5%;
+  border-radius: 7%;
+  margin-left: 15px;
+  max-width: 30%;
   height: auto;
-  display: block;
-}
+  align-self: center; /* vertically centers the image within the flex container */
+  margin-top: auto;        /* Pushes the image down until the top space is equal to bottom */
+  margin-bottom: auto;     /* Pushes the image up until the bottom space is equal to top */
 
-/* Optional: styling for the columns if needed */
-.hobbie-col1, .hobbie-col2 {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
 }

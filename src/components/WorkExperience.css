@@ -1,0 +1,92 @@
+.work-experience {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: var(--font-body), var(--font-sans);
+    /* Optional background for the whole section */
+  }
+  
+  /* Main heading for Work Experience */
+  .work-experience h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+    font-size: 2.5rem;
+  }
+  
+  /* Job Entry Layout: Three Columns */
+  .job-entry {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;  /* left and right columns share available space; center auto-sized */
+    gap: 1rem;
+    align-items: center;
+    background-color: rgb(74, 100, 119);  /* Dark blue background for contrast */
+    color: #fff;  /* White text for good contrast */
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Left Column (Image or extra info) */
+  .job-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Center Column: Timeline Marker */
+  .job-timeline {
+    position: relative;
+    width: 80px;  /* Adjust width as needed */
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  /* Create a vertical line in the center column */
+  .job-timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: #fff;
+    transform: translateX(-50%);
+  }
+  
+  /* Date styling inside the center column */
+  .job-date {
+    position: relative;
+    background-color: rgb(74, 100, 119); /* match the container to "break" the line */
+    padding: 0.25rem 0.5rem;
+    z-index: 1;
+  }
+  
+  /* Right Column: Job Details */
+  .job-right {
+    padding: 0 1rem;
+  }
+  
+  .job-right h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  
+  .job-right h3 {
+    margin: 0.25rem 0;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #ddd;
+  }
+  
+  .job-right ul {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+  }
+  
+  .job-right li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
