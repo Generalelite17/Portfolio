@@ -35,7 +35,27 @@ body {
   .container {
     width: 100%;
   }
+  .container2 {
+    width: 100%;
+    padding-left: clamp(1rem, -1rem + 10vw, 14rem);
+    padding-right: clamp(1rem, -1rem + 10vw, 14rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
   
+  .header-section{
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .header-section img {
+    width: 100%;
+    height: 375px;
+    object-fit: cover;
+    display: block;
+  }
+    
+
   .wp-block-group.container {
     text-align: left;
     padding: .5rem 1rem;            /* Adjust padding as needed */

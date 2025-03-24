@@ -1,12 +1,20 @@
 // src/components/Home.jsx
 import React from 'react';
+import './Home.css';
+import { IMG_0012 } from '../images';
+
+
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
-      <p>Welcome to my portfolio!</p>
-    </div>
+    <section className="home-container">
+      <div className="background-image" style={{ backgroundImage: `url(${IMG_0012})` }}>
+        <div className="home-wrapper-container">
+          <h1>I'M EMMANUEL CARDENAS</h1>
+          <p2>Welcome to my portfolio!</p2>
+        </div>
+      </div>
+  </section>
   );
 };
 

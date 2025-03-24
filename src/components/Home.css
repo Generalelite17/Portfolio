@@ -1,0 +1,39 @@
+/* Example: styles.css */
+.home-container {
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    overflow: hidden;
+  }
+  
+  .background-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /* center horizontally */
+    align-items: center;     /* center vertically */
+  }
+  
+  .home-wrapper-container {
+    text-align: center;
+    color: white; /* or any contrasting color */
+    background-color: rgba(0, 0, 0, 0.4); /* optional: semi-transparent overlay for readability */
+    padding: 2rem;
+    border-radius: 8px;
+    width: 80%;         /* Adjusts the container's width */
+    max-width: 600px;   /* Ensures it doesn't grow too wide on large screens */
+    margin: 0 auto;     /* Centers the container horizontally */
+    border: 4px solid white;  /* Adds a thick white border */
+    box-sizing: border-box;   /* Ensures padding and border are included in the width */
+  }
+
+  .home-wrapper-container h1 {
+    font-size: 2rem;     /* Larger header font size */
+    margin-bottom: 1rem; /* Space between header and paragraph */
+  }
+  
+  .home-wrapper-container p2 {
+    font-size: 1.5rem;   /* Larger paragraph font size */
+  }

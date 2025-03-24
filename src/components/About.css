@@ -1,54 +1,51 @@
-      /* Style for the main header in the About page */
-  .about-content h1 {
-    color: #333;
-    font-size: 2.5em;
-    text-align: center;
-    margin-bottom: 20px;
-  }
 
-  .container {
-    width: 100%;
-  }
-  
-  /* Intro section styling */
-  .intro-section {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 100%;
-    background-color: lightblue;
-    padding: 15px;
-  }
+.intro {
+  background-color: rgba(188,205,210,255)
+  /*background-color: lightblue;*/
+} 
 
-  .intro-text{
-    flex: 1;
-    margin-right: 15px;
-  }
-  .intro-text p {
-    text-align: left;
-    font-size: 1.3em;
-    line-height: 1.6;
-    color: #444;
-    padding-bottom: 20px;
-  }
+ /* Intro section styling */
+.intro-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px;
+}
 
-  .intro-img{
-    border-radius: 7%;
-    margin-left: 15px;
-    max-width: 50%;
-    align-self: center;
-    margin-top: auto;        /* Pushes the image down until the top space is equal to bottom */
-    margin-bottom: auto;     /* Pushes the image up until the bottom space is equal to top */
-  }
+.intro-text{
+  flex: 1;
+  margin-right: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.intro-text p {
+  text-align: left;
+  font-size: 1.3em;
+  line-height: 1.6;
+  color: #444;
+  padding-bottom: 20px;
+}
+
+.intro-img{
+  border-radius: 7%;
+  margin-left: 15px;
+  max-width: 50%;
+  align-self: center;
+  margin-top: auto;        /* Pushes the image down until the top space is equal to bottom */
+  margin-bottom: auto;     /* Pushes the image up until the bottom space is equal to top */
+}
   
-  
- /* Professional Journey Section as a two-column layout */
+.professional{
+  background-color: #fff; /* White background */
+}
+
+/* Professional Journey Section as a two-column layout */
 .professional-section {
   display: flex;
   align-items: flex-start; /* Aligns items at the top */
   justify-content: space-between;
   width: 100%;
-  background-color: #fff; /* White background */
   padding: 15px;
 }
 
@@ -58,7 +55,8 @@
   display: flex;
   flex-direction: column;
   gap: 1rem; /* Optional: adds space between the images */
-  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 /* Styles for the image on the left */
@@ -75,6 +73,8 @@
 .professional-text {
   flex: 1;
   text-align: left;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 /* Professional Journey heading */
@@ -93,18 +93,10 @@
   padding-bottom: 20px;
 }
 
-  .header-section{
-    width: 100%;
-    overflow: hidden;
-  }
+.hobbie{
+  background-color: rgb(74, 100, 119); /* Dark blue background */
+}
 
-  .header-section img {
-    width: 100%;
-    height: 375px;
-    object-fit: cover;
-    display: block;
-  }
-  
   /* Hobbie section styling */
 .hobbie-section {
   display: flex;
@@ -119,6 +111,8 @@
 .hobbie-text {
   flex: 1;
   margin-right: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 /* Hobbie section heading and paragraph */
