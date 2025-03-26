@@ -1,14 +1,14 @@
 // src/components/About.jsx
 import React from 'react';
 import './About.css'; // Optional: if you want component-specific styles
-import { IMG_0000, IMG_0002, IMG_0003, IMG_1979, IMG_0005, IMG_0007} from '../images';
+import { IMG_0000, IMG_0002, IMG_0003, IMG_1979, IMG_0005, IMG_0007,IMG_0012} from '../images';
 
 
 const About = () => {
     return (
       <>
         <div className="header-section">
-          <img src={IMG_0000} alt="header-image" />
+          <img src={IMG_0012} alt="header-image" />
         </div>
         <div className = "container">
             <section class= "intro">
