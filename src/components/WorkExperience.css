@@ -1,64 +1,147 @@
+/* Full-width wrapper for the professional experience section */
+.experience-wrapper {
+  background-color: rgb(25,26,29);  /* The black background you want */
+  width: 100%;
+  padding: 50px 20px;                /* Vertical padding to give some breathing room */
+}
+
+
+/* Work Experience Container */
 .work-experience {
   background-color: rgb(25,26,29);
   display: flex;
   flex-direction: column;
   gap: 30px;
   padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.work-card {
+/* Responsive Header Styling */
+.header {
+  color: #fff;
+  font-family: "Poppins-semibold", sans-serif;
+  line-height: 1.1em;
+  margin-bottom: 24px;
+  font-size: 12vw;        /* Responsive font size for small screens */
+  text-align: center;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    font-size: 60px;      /* Fixed font size for larger screens */
+    max-width: 500px;      /* Constrain the header width */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Accordion Container */
+.accordion {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* corrected shadow for better effect */
+  overflow: hidden;
+  transition: all 0.3s ease;
   max-width: 800px;
   margin: auto;
-  transition: transform 0.2s ease-in-out;
+  margin-bottom: 00px;
 }
 
-.work-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+/* Title Bar for Accordion */
+.accordion .title-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 'space-between' pushes title and toggle to opposite ends */
 }
 
-.card-header {
+.accordion .dates-toggle {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Adjust this value to bring them closer or further apart */
+}
+
+.accordion .title {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  margin-bottom: 15px;
+  padding: 15px 20px;
+  cursor: pointer;
+  background: #f7f7f7;
 }
 
-.card-header h3 {
-  margin: 0;
-  font-size: 1.75em;
+.accordion .title .job-title {
+  font-size: 1.5em;
   font-weight: 600;
 }
+.accordion .title .job-dates {
+  font-size: 1.5em;
+  font-weight: 600;
+  /* margin-top: 10px; */
+}
 
-.card-header span {
+.accordion .title .company-info {
   font-size: 0.95em;
   color: #666;
+  margin-top: 4px;
+  text-align: left;
 }
 
-.work-card p {
+.plus-minus-toggle {
+  font-size: 1.5em;
+  text-align: right;
+}
+
+/* Expandable Content */
+.accordion .expand {
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.accordion .inner {
+  padding: 15px 20px;
+  text-align: left;
+
+}
+
+.accordion .inner .company-info{
+text-align: left;
+font-size: 1.2rem;
+padding-bottom: 10px;
+
+}
+
+.accordion .inner p {
   font-size: 1em;
-  margin-bottom: 15px;
   line-height: 1.6;
+  margin-bottom: 15px;
 }
 
-.work-card ul {
+.accordion .inner ul {
   padding-left: 20px;
 }
 
-.work-card ul li {
+.accordion .inner ul li {
   padding-bottom: 10px;
   line-height: 1.5;
   position: relative;
 }
 
-.work-card ul li::before {
-  content: "•";  /* or an icon, e.g., '\2022' */
+.accordion .inner ul li::before {
+  content: "•";
   position: absolute;
   left: -15px;
   color: rgb(25,26,29);
 }
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .accordion {
+    max-width: 100%;
+    margin: 0 20px 20px;
+  }
+}
+

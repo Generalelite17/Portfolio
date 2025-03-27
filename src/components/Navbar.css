@@ -1,0 +1,50 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  color: #333333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+
+  /* explicitly set transition here for smoothness */
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Navbar visible (no translation) */
+.navbar-show {
+  transform: translateY(0);
+}
+
+/* Navbar hidden (moves up by its own height, hiding completely) */
+.navbar-hide {
+  transform: translateY(-100%);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 10px 0;
+}
+
+/* Increased spacing between nav items clearly */
+.navbar ul li {
+  margin: 0 25px; /* Increased from 15px to 25px for clear spacing */
+}
+
+/* Clearly matched font to Professional Experience header */
+.navbar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600; /* Slightly increased weight to match Professional header */
+  font-family: "Poppins-semibold", sans-serif; /* Matched font clearly */
+  transition: color 0.2s ease;
+  font-size: 1.1rem; /* Slightly larger font for readability */
+}
+
+.navbar ul li a:hover {
+  color: #2196f3;
+}

@@ -29,9 +29,9 @@ const Contact = () => {
   };
     return (
         <>
-            <section className = "header-section">
+            {/* <section className = "header-section">
                 <div className="header-img-position"/>
-            </section>
+            </section> */}
             <section className = "contact-wrapper">
                     <div className="contact-container">
                             <div className="text-contact-header">

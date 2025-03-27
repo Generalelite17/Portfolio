@@ -1,4 +1,3 @@
-export { default as IMG_8071 } from './IMG_8071.jpg';
 export { default as IMG_0000 } from './IMG_0000.jpg';
 export { default as IMG_0001 } from './IMG_0001.jpg';
 export { default as IMG_0002 } from './IMG_0002.jpg';
@@ -12,4 +11,10 @@ export { default as IMG_0009 } from './IMG_0009.jpg';
 export { default as IMG_0010 } from './IMG_0010.jpg';
 export { default as IMG_0011 } from './IMG_0011.jpg';
 export { default as IMG_0012 } from './IMG_0012.jpg';
+export { default as IMG_0013 } from './IMG_0013.jpg';
+export { default as IMG_0014 } from './IMG_0014.jpg';
+export { default as IMG_0015 } from './IMG_0015.jpg';
+export { default as IMG_0016 } from './IMG_0016.jpg';
+export { default as IMG_0017 } from './IMG_0017.jpg';
+export { default as IMG_0018 } from './IMG_0018.jpg';
 // Add additional exports as needed

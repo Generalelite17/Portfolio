@@ -1,47 +1,85 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './WorkExperience.css';
 
-const WorkExperience = () => {
-  return (
-    <div className="work-experience">
-      {/* Card for Engineer II at Plummer Associate Inc */}
-      <div className='container2'>
-      <div className="work-card">
-        <div className="card-header">
-          <h3>Engineer II</h3>
-          <span>Plummer Associate Inc - Austin, TX | Jan 2023 - Nov 2024</span>
-        </div>
-        <p className="paragraph-left-text">
-          Successfully managed concurrent projects across diverse markets, including telecommunications infrastructure for private clients and municipal authorities.
-        </p>
-        <ul>
-          <li>Design civil infrastructure for dry utilities (telecom) catering to both private and municipal clients.</li>
-          <li>Provided expertise to resolve utility conflicts between existing and proposed infrastructure, including roadway, drainage, and other utilities.</li>
-          <li>Maintain open communication and coordination with clients as necessary.</li>
-          <li>Collaborate with engineers and technical experts to create plans, primarily utilizing AutoCAD and GIS applications.</li>
-          <li>Lead and conduct interviews to identify and recruit talented individuals.</li>
-          <li>Train new team members in our processes, documentation, and software utilization.</li>
-        </ul>
-      </div>
-      </div>
+const experiences = [
+  {
+    id: 1,
+    title: "Engineer II",
+    jobdates: "Jan 2023 - Nov 2024",
+    companyInfo: "Plummer Associate - Remote",
+    description:
+      "Successfully managed concurrent projects across diverse markets, including telecommunications infrastructure for private clients and municipal authorities.",
+    details: [
+      "Designed civil infrastructure for dry utilities (telecom) catering to both private and municipal clients.",
+      "Provided expertise to resolve utility conflicts between existing and proposed infrastructure (roadway, drainage, etc.).",
+      "Maintained open communication and coordination with clients.",
+      "Collaborated with engineers and technical experts to create plans using AutoCAD and GIS applications.",
+      "Led and conducted interviews to identify and recruit talented individuals.",
+      "Trained new team members in processes, documentation, and software utilization."
+    ]
+  },
+  {
+    id: 2,
+    title: "Project Manager",
+    jobdates: "Jul 2020 - Aug 2022",
+    companyInfo: "Oncor Electric Delivery - Midland, TX",
+    description:
+      "Managed residential and commercial/industrial projects through the construction process, ensuring timely completion and accurate project documentation.",
+    details: [
+      "Reduced project timelines by 33% compared to the company's average.",
+      "Expertly handled a portfolio of up to 60 projects simultaneously.",
+      "Managed projects ranging from $8,000 to $100,000 in value, totaling approximately $750,000.",
+      "Demonstrated strong project coordination, documentation, and time management skills."
+    ]
+  }
+];
 
-      {/* Card for Project Manager at Oncor Electric Delivery */}
-      <div className="work-card">
-        <div className="card-header">
-          <h3>Project Manager</h3>
-          <span>Oncor Electric Delivery - Midland, TX | Jul 2020 - Aug 2022</span>
+const WorkExperience = () => {
+  const [activeId, setActiveId] = useState(null);
+
+  const toggleAccordion = (id) => {
+    setActiveId(activeId === id ? null : id);
+  };
+
+  return (
+    <div className="experience-wrapper">
+    <div className="work-experience">
+      <h1 className="header">Professional Experience</h1>
+      {experiences.map((exp) => (
+        <div key={exp.id} className={`accordion ${activeId === exp.id ? "active" : ""}`}>
+          <div className="title" onClick={() => toggleAccordion(exp.id)}>
+            <div className="title-info">
+              <div className="job-title">{exp.title}</div>
+              <div className="dates-toggle">
+                <div className='job-dates'>{exp.jobdates}</div>
+                <div className="plus-minus-toggle">{activeId === exp.id ? "-" : "+"}</div>
+                {/* <div className="company-info">{exp.companyInfo}</div> */}
+              </div>
+            </div>  
+          </div>
+          <div
+            className="expand"
+            style={{
+              maxHeight: activeId === exp.id ? "1000px" : "0",
+              opacity: activeId === exp.id ? 1 : 0,
+            }}
+          >
+            <div className="inner">
+              <div className='inner-info'>
+                <div className="company-info">{exp.companyInfo}</div>
+              </div>
+              <p>{exp.description}</p>
+              <ul>
+                {exp.details.map((detail, index) => (
+                  <li key={index}>{detail}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
-        <p className="paragraph-left-text">
-          Managed residential and commercial/industrial projects through the construction process, ensuring timely completion and accurate project documentation.
-        </p>
-        <ul>
-          <li>Reduced project timelines by 33% compared to the company's average.</li>
-          <li>Expertly handled a portfolio of up to 60 projects simultaneously, demonstrating outstanding multitasking abilities.</li>
-          <li>Effectively managed projects ranging from $8,000 to $100,000 in value, totaling approximately $750,000.</li>
-          <li>Demonstrated strong project coordination, documentation, and time management skills.</li>
-        </ul>
-      </div>
+      ))}
     </div>
+    </div>  
   );
 };
 

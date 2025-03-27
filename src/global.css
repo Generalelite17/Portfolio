@@ -9,6 +9,11 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 :root {
     /* Container & Layout */
     --max-container-width: 120rem;

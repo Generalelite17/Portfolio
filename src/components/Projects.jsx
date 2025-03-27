@@ -1,44 +1,92 @@
 import React from "react";
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
 import "./Projects.css";
+import { IMG_0013, IMG_0014, IMG_0015, IMG_0016, IMG_0017, IMG_0018} from '../images';
+
 
 const Projects = () => {
-    return (
-        <div className="projects">
-            <h1>Projects</h1>
-            <p>Welcome to my project tab</p>
-            <VerticalTimeline>
-                <VerticalTimelineElement
-                    className="vertical-timeline-element--work"
-                    contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                    date="2022 - Present"
-                    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    icon={<i className="fas fa-code"></i>}
-                >
-                    <h3 className="vertical-timeline-element-title">Project One</h3>
-                    <h4 className="vertical-timeline-element-subtitle">Web Development</h4>
-                    <p>
-                        A brief description of project one. You can mention the technologies used, challenges faced, and any notable features.
-                    </p>
-                </VerticalTimelineElement>
-                <VerticalTimelineElement
-                    className="vertical-timeline-element--work"
-                    date="2020 - 2022"
-                    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    icon={<i className="fas fa-desktop"></i>}
-                >
-                    <h3 className="vertical-timeline-element-title">Project Two</h3>
-                    <h4 className="vertical-timeline-element-subtitle">App Development</h4>
-                    <p>
-                        A description of project two, highlighting its key features and the impact it made.
-                    </p>
-                </VerticalTimelineElement>
-                {/* Add more VerticalTimelineElement components for additional projects */}
-            </VerticalTimeline>
-        </div>
-    );
+  // Array of project objects – update the details as needed
+  const projects = [
+    {
+      id: 1,
+      title: "Stock Prediction App",
+      description:
+        "A machine learning project that predicts stock trends using historical data. Built with Python, Pandas, and scikit-learn, this project showcases my analytical and technical skills.",
+      image: IMG_0013,
+      link: "https://github.com/Generalelite17/Stock-Price-Prediction"
+    },
+    {
+      id: 2,
+      title: "Peer-to-Peer Network",
+      description:
+        "A decentralized peer-to-peer networking application for secure data sharing. This project demonstrates my knowledge in distributed systems and networking.",
+      image: IMG_0014,
+      link: "https://github.com/Generalelite17/Peer2Peer",
+    },
+    {
+      id: 3,
+      title: "Algorithm Performance Comparison",
+      description:
+        "Implemented and compared sorting, searching, shortest paths, MST, and max flow algorithms to evaluate running times and identify performance strengths.",
+      image: IMG_0016,
+      link: "https://github.com/Generalelite17",
+    },
+    {
+        id: 4,
+        title: "Bluetooth/Zigbee Handshake Simulator",
+        description:
+          "Simulated a Bluetooth/ZigBee handshake using a TCP client-server model to establish a shared session key and exchange encrypted packets.",
+        image: IMG_0017,
+        link: "https://github.com/Generalelite17",
+      },
+    {
+      id: 5,
+      title: "WPA3 Handshake Simulator",
+      description:
+        "Simulated the WPA3 client-AP four-way handshake using a TCP server and client to establish a shared session key and exchange encrypted packets via built-in cryptography libraries.",
+      image: IMG_0018,
+      link: "https://github.com/Generalelite17",
+    },
+    {
+      id: 6,
+      title: "Explore More on GitHub",
+      description:
+        "Discover a range of innovative projects, experiments, and code samples that showcase my passion for software development. Click here to explore my full portfolio of work on GitHub.",
+      image: IMG_0015,
+      link: "https://github.com/Generalelite17",
+    },
+
+
+  ];
+
+  const gridClass = projects.length < 3 ? "projects-grid few" : "projects-grid";
+
+
+  return (
+    <div className="projects-container">
+      <h1 className="header">Projects</h1>
+      <div className={gridClass}>
+        {projects.map((project) => (
+          <div key={project.id} className="project-card">
+            <div
+              className="project-image"
+              style={{ backgroundImage: `url(${project.image})` }}
+            />
+            <div className="project-info">
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Projects;
