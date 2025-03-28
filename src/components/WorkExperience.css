@@ -2,7 +2,7 @@
 .experience-wrapper {
   background-color: rgb(25,26,29);  /* The black background you want */
   width: 100%;
-  padding: 50px 20px;                /* Vertical padding to give some breathing room */
+  padding: 75px 20px;                /* Vertical padding to give some breathing room */
 }
 
 
@@ -15,6 +15,16 @@
   padding: 40px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .experience-wrapper {
+    padding: 50px 10px; /* less horizontal padding */
+  }
+
+  .work-experience {
+    padding: 20px; /* reduce padding to prevent content from feeling too bundled */
+  }
 }
 
 /* Responsive Header Styling */
@@ -83,6 +93,12 @@
   /* margin-top: 10px; */
 }
 
+@media screen and (max-width: 768px) {
+  .job-dates {
+    display: none;
+  }
+}
+
 .accordion .title .company-info {
   font-size: 0.95em;
   color: #666;
@@ -141,7 +157,7 @@ padding-bottom: 10px;
 @media screen and (max-width: 768px) {
   .accordion {
     max-width: 100%;
-    margin: 0 20px 20px;
+    margin: 0 20px 10px;
   }
 }
 

@@ -1,68 +1,221 @@
-.contact-wrapper{
-  background-color: rgb(25,26,29);
-}
-.header-img-position {
-    background-image: url("../images/IMG_0009.jpg"); /* Adjust the path as needed */
-    background-size: 100%;
-    background-position: 0 -25px;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 375px;
+/* ==========================================================================
+   Contact Page Base Styles
+   ========================================================================== */
+
+/* Full-width background wrapper for the Contact section */
+.contact-wrapper {
+  background-color: #232328;
 }
 
-/* Contact.css */
-   
-  /* Container for centering the form content */
-  .contact-container {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
+/* Header image styling (if using a header image) */
+.header-img-position {
+  background-image: url("../images/IMG_0009.jpg"); /* Adjust the path as needed */
+  background-size: 100%;
+  background-position: 0 -25px;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 375px;
+}
+
+/* Container for centering the contact content */
+.contact-container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Container for contact header text */
+.text-contact-container {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+/* Contact Header and Text Styling */
+.text-contact-header h1 {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: 'Roboto Mono', monospace;
+  color: #fff;
+}
+.header-bar {
+  width: 30%;         /* Adjust as needed */
+  height: 4px;        /* Line thickness */
+  background-color: #fff;  /* Line color */
+  margin: 20px auto;  /* Center and space the line */
+}
+
+/* Example of a simple slide-in-right animation */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animated.slide-in-right {
+  animation: slideInRight 0.5s ease;
+}
+
+.text-contact-container p {
+  font-family: 'Poppins', ;
+  font-size: 14pt;
+  color: #04c2c9;
+  font-weight: 600;
+}
+
+
+/* ==========================================================================
+   Contact Form Styles
+   ========================================================================== */
+
+/* Contact form layout */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+/* Form label styling */
+.contact-form label {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+/* Input and textarea styling */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background: #1f1f23; /* if you want a dark background for the inputs */
+  color: #fff;
+  box-sizing: border-box;
+  height: 50px;  /* Directly setting the height */
+}
+
+/* Placeholder styling for inputs and textarea */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #fff;           /* White placeholder text */
+  opacity: 0.8;          /* Slight transparency */
+  font-family: "Poppins", sans-serif;
+  font-size: 12pt;       /* Adjust as needed */
+}
+
+
+/* Button styling */
+.contact-form button {
+  padding: 10px;
+  background-color: #04c2c9;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Button hover effect */
+.contact-form button:hover {
+  background-color: #005fa3;
+}
+
+/* ==========================================================================
+   Additional Responsive & Layout Adjustments
+   ========================================================================== */
+
+/* Example: styles for larger screens (min-width: 1200px) */
+/* Ensure your contact section has an ID "contact" for these rules to apply */
+@media screen and (min-width: 1200px) {
+  #contact .contact {
+    order: 1;
+    flex: 50%;
   }
   
-  .text-contact-container{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: center;
+  /* If you have quotes or similar elements */
+  #contact .quotes,
+  #contact [class~=contact] {
+    flex: 50%;
   }
-  
-  /* Contact form styling */
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
-    text-align: left;
+}
+
+/* For screens 1024px and up, adjust top padding */
+@media screen and (min-width: 1024px) {
+  #contact .contact {
+    padding-top: 75pt;
   }
-  
-  /* Label styling for the form */
-  .contact-form label {
-    font-weight: bold;
-  }
-  
-  /* Input and textarea styling */
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-  }
-  
-  /* Button styling */
-  .contact-form button {
-    padding: 10px;
-    background-color: #0077cc;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-  
-  /* Button hover effect */
-  .contact-form button:hover {
-    background-color: #005fa3;
-  }
-  
+}
+
+/* Ensure certain elements are positioned relative */
+.modal-wrap .mdi-open-in-new,
+#contact .contact,
+.modal-wrap .mdi-open-in-new {
+  position: relative;
+}
+
+/* Additional padding adjustments for the contact area */
+#contact .contact {
+  padding-top: 1.770833333in;
+  padding-bottom: 6.25pc;
+  background: #232328;
+}
+
+/* Ensure text elements (headers, inputs, etc.) have the correct color */
+#contact [class~=header],
+footer .icon-wrap .icon:hover .mdi,
+#contact input[type=text],
+#contact .contact {
+  color: #fff;
+}
+
+/* ==========================================================================
+   Button Customization
+   ========================================================================== */
+
+.button {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.button span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Example ripple effect CSS using custom properties */
+.button::after {
+  content: "";
+  position: absolute;
+  left: var(--ripple-x);
+  top: var(--ripple-y);
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(var(--ripple-scale));
+  border-radius: 50%;
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.button:active::after {
+  width: 200px;
+  height: 200px;
+}

@@ -3,13 +3,13 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: #fff;
-  color: #333333;
+  background: rgb(38,56,70);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 100;
-
-  /* explicitly set transition here for smoothness */
   transition: transform 0.4s ease-in-out;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
 }
 
 /* Navbar visible (no translation) */
@@ -17,11 +17,12 @@
   transform: translateY(0);
 }
 
-/* Navbar hidden (moves up by its own height, hiding completely) */
+/* Navbar hidden (moves up, hiding completely) */
 .navbar-hide {
   transform: translateY(-100%);
 }
 
+/* Desktop navigation styles */
 .navbar ul {
   list-style: none;
   display: flex;
@@ -30,21 +31,72 @@
   padding: 10px 0;
 }
 
-/* Increased spacing between nav items clearly */
 .navbar ul li {
-  margin: 0 25px; /* Increased from 15px to 25px for clear spacing */
+  margin: 0 25px;
 }
 
-/* Clearly matched font to Professional Experience header */
 .navbar ul li a {
   text-decoration: none;
-  color: #333;
-  font-weight: 600; /* Slightly increased weight to match Professional header */
-  font-family: "Poppins-semibold", sans-serif; /* Matched font clearly */
+  color: #fff;
+  font-weight: 600;
+  font-family: "Poppins-semibold", sans-serif;
   transition: color 0.2s ease;
-  font-size: 1.1rem; /* Slightly larger font for readability */
+  font-size: 1.1rem;
 }
 
 .navbar ul li a:hover {
   color: #2196f3;
+}
+
+/* Hamburger icon - initially hidden */
+.navbar-hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar-hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: 0.3s;
+  align-self: flex-end; /* Align this bar to the right */
+}
+
+/* Responsive styles for small screens */
+@media screen and (max-width: 768px) {
+  /* Hide the desktop menu */
+  .navbar ul {
+    display: none;
+  }
+  
+  /* Show the hamburger icon */
+  .navbar-hamburger {
+    display: flex;
+  }
+  
+  /* Dropdown menu (when hamburger is clicked) */
+  .navbar-menu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #232328;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+  }
+  
+  .navbar-menu.open {
+    display: flex; /* Ensure it is displayed */
+    max-height: 300px; /* Adjust this value as needed */
+  }
+  
+  .navbar-menu li {
+    margin: 10px 0;
+  }
 }

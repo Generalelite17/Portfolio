@@ -36,42 +36,63 @@ const Contact = () => {
                     <div className="contact-container">
                             <div className="text-contact-header">
                                 <h1>Contact</h1>
+                                <div
+                                    className="header-bar waypoint animated slide-in-right"
+                                    data-animation="slide-in-right"
+                                    data-delay=".25s"
+                                    style={{ animationDelay: "0.25s", opacity: 1 }}
+                                ></div>
                                 <div className = "text-contact-container">
                                     <p>
-                                        Get in touch with me by filling out the form below.
+                                        Have a question or want to work together?
                                     </p>
                                 </div>
                             </div>
                         <form onSubmit={handleSubmit} className="contact-form">
-                            <label htmlFor="name">Name</label>
+                            <label htmlFor="name"></label>
                             <input
                                 type="text"
                                 id="name"
+                                placeholder="Name"
                                 name="name"
                                 value={formData.name}
                                 onChange={handleChange}
                                 required
                             />
-
-                            <label htmlFor="email">Email</label>
+                            <label htmlFor="email"></label>
                                 <input
                                     type="email"
                                     id="email"
+                                    placeholder="Enter Email"
                                     name="email"
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
                                 />
 
-                            <label htmlFor="message">Message</label>
+                            <label htmlFor="message"></label>
                             <textarea
                                 id="message"
                                 name="message"
+                                placeholder="Your Message"
                                 value={formData.message}
                                 onChange={handleChange}
                                 required
                             />
-                            <button type="submit">Send Message</button>
+                            <button
+                                className="button"
+                                type="submit"
+                                id="submit"
+                                value="SUBMIT"
+                                style={{
+                                    "--ripple-x": "3.45001220703125px",
+                                    "--ripple-y": "34.012481689453125px",
+                                    "--ripple-scale": "2.244197134420428"
+                                }}
+                                >
+                                <span>Send Message</span>
+                            </button>
+
                         </form>
                 </div>  
             </section>
@@ -80,3 +101,5 @@ const Contact = () => {
 };  
 
 export default Contact;
+
+
