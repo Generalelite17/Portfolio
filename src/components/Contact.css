@@ -119,11 +119,12 @@
 .contact-form button {
   padding: 10px;
   background-color: #04c2c9;
-  color: #fff;
+  color: #232328;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
+  font-weight: 600;
 }
 
 /* Button hover effect */

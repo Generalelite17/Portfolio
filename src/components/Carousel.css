@@ -1,0 +1,63 @@
+.carousel-wrap {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .window {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    /* Optionally set a fixed height or let it adjust automatically */
+    height: auto;
+  }
+  
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+.carousel{
+  display: flex;
+  transition: transform 0.5s ease;
+  
+}
+
+/* Carousel slide container (adaptive height) */
+.carousel-slide {
+  width: 65vw;              /* The slide still takes full modal width */
+  flex-shrink: 0;
+  max-height: 600px;
+}
+/* Image styling: responsive scaling */
+.carousel-slide img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+  /* Navigation button styles */
+  .carousel-btn {
+    position: absolute;
+    top: 95%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    padding: 1.5rem;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 2rem;
+  }
+
+  .carousel-btn.prev {
+    left: 0;
+  }
+  .carousel-btn.next {
+    right: 0;
+  }
+  
+  

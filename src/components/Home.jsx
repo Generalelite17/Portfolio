@@ -10,7 +10,7 @@ const Home = () => {
     <section className="home-container">
       <div className="background-image" style={{ backgroundImage: `url(${IMG_0000})` }}>
         <div className="home-wrapper-container">
-          <h1>I'M EMMANUEL CARDENAS</h1>
+          <h1>EMMANUEL CARDENAS</h1>
           <p2>Welcome to my portfolio!</p2>
         </div>
       </div>

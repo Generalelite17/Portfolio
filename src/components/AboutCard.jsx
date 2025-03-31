@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./About.css";
 import Modal from "./Modal";
+import Carousel from "./Carousel";
 
-const AboutCard = ({ title, note, summary, details, images, alignRight, className }) => {
+const AboutCard = ({ title, note, summary, details, details1, details2, images, alignRight, className }) => {
   const [modalOpen, setModalOpen] = useState(false); // Define state for modal
 
   return (
@@ -31,18 +32,15 @@ const AboutCard = ({ title, note, summary, details, images, alignRight, classNam
       </div>
 
       <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
-        <h2>{title}</h2>
-        <p>{summary}</p>
-        <p>{details}</p>
-        {/* Optionally, display all images if available */}
-        {images.map((src, index) => (
-          <img
-            key={index}
-            src={src}
-            alt={`${title} - ${index + 1}`}
-            style={{ width: "100%", marginBottom: "10px" }}
-          />
-        ))}
+          <div className="carousel-container">
+            <Carousel slides={images} />
+          </div>
+          <div className="modal-content-text">
+            <h2>{title}</h2>
+            <p>{details}</p>
+            <p>{details1}</p>
+            <p>{details2}</p> 
+          </div> 
       </Modal>
     </>
   );
